@@ -1,19 +1,15 @@
-// app/page.tsx
-import { auth } from '@/auth';
-import SignIn from '@/components/sign-in';
-import SignInGoogle from '@/components/sign-in-google';
+import TopicCreateForms from '@/components/topic-create-forms'
+import React from 'react'
 
-export default async function Page() {
-  const session = await auth()
-  
+export default function Page() {
   return (
-    <div>
-      <SignIn/>
-      <SignInGoogle/>
-
-      <h1>
-        {JSON.stringify(session?.user)}
-      </h1>
+    <div className='flex justify-between'>
+      <div>
+        <h1 className='text-xl mt-2'>Top Posts</h1>
+      </div>
+      <div>
+        <TopicCreateForms/>
+      </div>
     </div>
   )
 }
